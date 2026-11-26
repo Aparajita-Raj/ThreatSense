@@ -1,0 +1,24 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: threatsense-backend
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend/threatsense_users.db:/app/threatsense_users.db
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: threatsense-frontend
+    ports:
+      - 5173:5173
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -1,0 +1,12 @@
+
+fastapi==0.162.2
+uvicorn==0.54.0
+bcrypt==5.0.0
+pydantic==2.14.3
+torch-geometric==2.8.1
+joblib==1.6.0
+pandas==3.1.1
+numpy==2.5.4
+pynndescent==0.7.0
+scikit-learn==1.9.1
+python-multipart==0.0.33
